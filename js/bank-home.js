@@ -10,22 +10,29 @@ function totalValue(totalId, ammount){
     const total = document.getElementById(totalId);
     const parseTotal = parseFloat(total.innerText);
     total.innerText = parseTotal + ammount;
-    // return parseTotal;
 }
 
+function updateTotalBalance(ammount, isAdd){
+    const updateBalance = document.getElementById('balance-total');
+    const parseUpdateTotal = parseFloat(updateBalance.innerText);
+    if(isAdd == true){
+        updateBalance.innerText = parseUpdateTotal + ammount;
+    }
+    else{
+        updateBalance.innerText = parseUpdateTotal - ammount;
+    }
+}
 
 
 document.getElementById('deposite-btn').addEventListener('click', function () {
     const depositeAmmount = inputValue('deposite-ammount');
-    totalValue('deposit-total', depositeAmmount)
-    totalValue('balance-total', depositeAmmount)
+    totalValue('deposit-total', depositeAmmount);
+    updateTotalBalance(depositeAmmount, true);
 })
 
 
 document.getElementById('withdraw-btn').addEventListener('click', function () {
     const withdrawAmmount = inputValue('withdraw-ammount');
-    totalValue('withdraw-total', withdrawAmmount)
-    const balanceTotal = document.getElementById('balance-total');
-    const parseBlTotal = parseFloat(balanceTotal.innerText);
-    balanceTotal.innerText = parseBlTotal - withdrawAmmount;
+    totalValue('withdraw-total', withdrawAmmount);
+    updateTotalBalance(withdrawAmmount, false);
 })

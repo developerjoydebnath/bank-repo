@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body >
+    <section class="w-3/4 mx-auto my-8">
+        <h1 class="text-5xl">wellcome to switch bank</h1>
+        <div class="grid grid-cols-3 gap-4 my-8">
+            <div class="bg-green-100 rounded-lg py-16">
+                <h1 class="text-3xl text-center">Deposite</h1>
+                <h1 class="text-3xl text-center">$<span id="deposit-total">00</span></h1>
+            </div>
+            <div class="bg-yellow-100 rounded-lg py-16">
+                <h1 class="text-3xl text-center">Withdraw</h1>
+                <h1 class="text-3xl text-center">$<span id="withdraw-total">00</span></h1>
+            </div>
+            <div class="bg-red-100 rounded-lg py-16">
+                <h1 class="text-3xl text-center">Blance</h1>
+                <h1 class="text-3xl text-center">$<span id="balance-total">1200</span></h1>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 my-8">
+            <div class="bg-blue-100 py-12 text-center rounded-lg">
+                <h1 class="text-3xl">Deposit here</h1>
+                <input id="deposite-ammount" class="rounded-lg my-5 block w-3/4 py-3 mx-auto px-3" type="text" name="" id="input-email"><br>
+                <button class="bg-blue-500 text-2xl p-5 rounded-lg my-5" id="deposite-btn">Deposite</button>
+            </div>
+            <div class="bg-purple-100 py-12 text-center rounded-lg">
+                <h1 class="text-3xl">Withdraw here</h1>
+                <input class="rounded-lg my-5 block w-3/4 py-3 mx-auto px-3" type="text" name="" id="withdraw-ammount"><br>
+                <button class="bg-blue-500 text-2xl p-5 rounded-lg my-5" id="withdraw-btn">Withdraw</button>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <script src="./js/bank-home.js"></script>
+</body>
+</html>
+

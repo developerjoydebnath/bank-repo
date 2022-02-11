@@ -6,34 +6,26 @@ function inputValue(inputId){
     return parseAmmount;
 }
 
-function totalValue(totalId){
+function totalValue(totalId, ammount){
     const total = document.getElementById(totalId);
     const parseTotal = parseFloat(total.innerText);
-    return parseTotal;
+    total.innerText = parseTotal + ammount;
+    // return parseTotal;
 }
 
 
 
 document.getElementById('deposite-btn').addEventListener('click', function () {
     const depositeAmmount = inputValue('deposite-ammount');
-    const depositeTotal = document.getElementById('deposit-total');
-    const parseDpTotal = totalValue('deposit-total');
-    const balanceTotal = document.getElementById('balance-total');
-    const parseBlTotal = totalValue('balance-total');
-    
-    depositeTotal.innerText = parseDpTotal + depositeAmmount;
-    balanceTotal.innerText = parseBlTotal + depositeAmmount;
-
+    totalValue('deposit-total', depositeAmmount)
+    totalValue('balance-total', depositeAmmount)
 })
+
 
 document.getElementById('withdraw-btn').addEventListener('click', function () {
     const withdrawAmmount = inputValue('withdraw-ammount');
-    const withdrawTotal = document.getElementById('withdraw-total');
-    const parseWdTotal = totalValue('withdraw-total');
+    totalValue('withdraw-total', withdrawAmmount)
     const balanceTotal = document.getElementById('balance-total');
-    const parseBlTotal = totalValue('balance-total');
-
-    withdrawTotal.innerText = parseWdTotal + withdrawAmmount;
+    const parseBlTotal = parseFloat(balanceTotal.innerText);
     balanceTotal.innerText = parseBlTotal - withdrawAmmount;
-
 })
